@@ -1,0 +1,8 @@
+apiVersion: v1 #A VERSÃO DA API
+kind: Pod #O TIPO DE OBJETO
+metadata:
+  name: nginx-pod # O NOME DO OBJETO
+spec: # QUAL É O ESTADO DESEJADO PARA O NOSSO OBJETO
+  containers: # UM ARRAY DE CONTAINERS
+    - name: nginx # O NOME DO CONTAINER
+      image: nginx:1.14.2 # A IMAGEM DO CONTAINER QUE VAI SER BAIXADO NO hub.docker.com
