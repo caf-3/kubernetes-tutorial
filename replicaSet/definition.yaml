@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: my-replica-set
+spec: 
+  template: # AQUI DEFINIMOS A CONFIGURAÇÃO DESEJADA PARA OS NOSSOS PODS
+    metadata:
+      name: my-nginx-pod 
+      labels: 
+        app: nginx-pod # USAMOS ESTA CHAVE PARA COMO SE FOSSE UMA "PORTA" PARA QUE O ESTADO DO REPLICAsET POSSA SER ATRIBUIDA A ESSE(S) POD(S)
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+  replicas: 3 # QUEREMOS QUE 3 REPLICAS DESTE(S) POD(S) ESTEJA/ESTEJAM A CORRER
+  selector: 
+    matchLabels: # CONECTAMOS COM O LABEL ACIMA DEFINIDO
+      app: nginx-pod
