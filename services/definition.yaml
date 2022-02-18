@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: podA-service
+spec:
+  selector:
+    app: backend-a # Esse serviço vai procurar por pods que tenham algum label app=backend-a ...
+  ports:
+    - protocol: TCP
+      port: 8080 # O serviço escuta por conexões nesta porta. Ex: http://podA-service:8080
+      targetPort: 9376 # ... e manda para algum pod que esteja a escutar nessa porta com o label acima
