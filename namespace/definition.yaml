@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: development
+
+# Agora, sempre que quisermos adicionar um objeto para este namespace basta adicionar 
+# No campo metadata, o seguinte
+# namespace: developement 
